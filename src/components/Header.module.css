@@ -1,0 +1,101 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: #c8d4db;
+  flex-shrink: 0;
+  min-height: 64px;
+  gap: 16px;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+/* Stats centrales */
+.center {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(45, 55, 72, 0.08);
+  border: 1px solid rgba(45, 55, 72, 0.14);
+  border-radius: 12px;
+  padding: 6px 4px;
+}
+
+.statBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 4px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.statBtn:hover { background: rgba(45,55,72,0.08); }
+
+.statLabel {
+  font-size: 10px;
+  color: #4a5568;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.statVal {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.statDivider {
+  width: 1px;
+  height: 28px;
+  background: rgba(45,55,72,0.2);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.badge {
+  background: rgba(45, 55, 72, 0.12);
+  border: 1px solid rgba(45, 55, 72, 0.18);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  color: #2d3748;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .center { display: none; }
+}
+
+@media (max-width: 768px) {
+  .header { padding: 0 14px; }
+  .badge:not(:first-child) { display: none; }
+  .logo { height: 34px; }
+}
+
+@media (max-width: 400px) {
+  .badge { display: none; }
+}

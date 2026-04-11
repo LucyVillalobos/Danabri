@@ -1,0 +1,55 @@
+.posContainer {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.posLeft {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.estado {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.estadoError {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--red);
+  padding: 20px;
+  text-align: center;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .posContainer {
+    grid-template-columns: 1fr;
+    height: 100dvh;
+    position: relative;
+  }
+}
