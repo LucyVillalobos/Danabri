@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useCart } from "./CartContext";
 import ModalCobro from "./ModalCobro";
 import styles from "./Carrito.module.css";
@@ -12,7 +12,7 @@ function Toast({ mensaje, emoji, visible }) {
   );
 }
 
-function Carrito() {
+function Carrito({ onVentaCompletada }) {
   const { carrito, cambiarCantidad, limpiar, totalItems, subtotal, iva, total } = useCart();
   const [drawerAbierto, setDrawerAbierto] = useState(false);
   const [modalAbierto,  setModalAbierto]  = useState(false);
@@ -31,6 +31,7 @@ function Carrito() {
   const onConfirmar = () => {
     limpiar();
     mostrarToast("Venta registrada exitosamente", "🎉");
+    if (onVentaCompletada) onVentaCompletada();
   };
 
   const items = Object.values(carrito);

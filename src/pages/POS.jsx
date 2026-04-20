@@ -14,31 +14,26 @@ function POS() {
   const [busqueda,         setBusqueda]         = useState("");
   const [categoria,        setCategoria]        = useState("Todos");
   const [historialAbierto, setHistorialAbierto] = useState(false);
+  const [reload,           setReload]           = useState(0);
 
   useEffect(() => {
+    setCargando(true);
     getProductos()
-      .then((data) => {
-        setProductos(data);
-        setCargando(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setCargando(false);
-      });
-  }, []);
+      .then((data) => { setProductos(data); setCargando(false); })
+      .catch((err)  => { setError(err.message); setCargando(false); });
+  }, [reload]);
 
-  // Aplanar productos con sus presentaciones para el POS
   const productosAplanados = productos.flatMap((p) =>
     p.presentaciones.map((pp) => ({
-      id:             pp.id_presentacion,
+      id:              pp.id_presentacion,
       id_presentacion: pp.id_presentacion,
-      nombre:         `${p.nombre}${p.presentaciones.length > 1 ? ` — ${pp.nombre}` : ""}`,
-      precio_menudeo: pp.precio_menudeo,
-      precio_mayoreo: pp.precio_mayoreo,
-      precio:         pp.precio_menudeo,
-      stock:          pp.stock,
-      categoria:      p.categoria || "General",
-      emoji:          getEmoji(p.categoria),
+      nombre:          `${p.nombre}${p.presentaciones.length > 1 ? ` — ${pp.nombre}` : ""}`,
+      precio_menudeo:  pp.precio_menudeo,
+      precio_mayoreo:  pp.precio_mayoreo,
+      precio:          pp.precio_menudeo,
+      stock:           pp.stock,
+      categoria:       p.categoria || "General",
+      emoji:           getEmoji(p.categoria),
     }))
   );
 
@@ -61,26 +56,23 @@ function POS() {
           categoria={categoria}
           setCategoria={setCategoria}
         />
-
         {cargando && (
           <div className={styles.estado}>
             <span className={styles.spinner} />
             Cargando productos...
           </div>
         )}
-
         {error && (
           <div className={styles.estadoError}>
             ⚠️ {error} — ¿Está corriendo el backend?
           </div>
         )}
-
         {!cargando && !error && (
           <ListaProductos productos={productosFiltrados} />
         )}
       </div>
 
-      <Carrito />
+      <Carrito onVentaCompletada={() => setReload((r) => r + 1)} />
 
       {historialAbierto && (
         <HistorialVentas onCerrar={() => setHistorialAbierto(false)} />
@@ -89,7 +81,6 @@ function POS() {
   );
 }
 
-// Emoji por categoría
 function getEmoji(categoria) {
   const map = {
     "Cuadernos":    "📓",
