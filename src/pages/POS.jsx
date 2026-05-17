@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import Header from "../components/Header";
-import Buscador from "../components/Buscador";
+import Header         from "../components/Header";
+import BuscadorCodigo from "../components/BuscadorCodigo";
+import Buscador       from "../components/Buscador";
 import ListaProductos from "../components/ListaProductos";
-import Carrito from "../components/Carrito";
+import Carrito        from "../components/Carrito";
 import HistorialVentas from "../components/HistorialVentas";
+import MenuF2         from "../components/MenuF2";
 import { getProductos } from "../api/api";
 import styles from "./POS.module.css";
 
@@ -14,7 +16,17 @@ function POS() {
   const [busqueda,         setBusqueda]         = useState("");
   const [categoria,        setCategoria]        = useState("Todos");
   const [historialAbierto, setHistorialAbierto] = useState(false);
+  const [menuF2Abierto,    setMenuF2Abierto]    = useState(false);
   const [reload,           setReload]           = useState(0);
+
+  // Atajo de teclado F2
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "F2") { e.preventDefault(); setMenuF2Abierto((v) => !v); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   useEffect(() => {
     setCargando(true);
@@ -45,10 +57,16 @@ function POS() {
     return matchCat && matchBusqueda;
   });
 
+  const recargar = () => setReload((r) => r + 1);
+
   return (
     <div className={styles.posContainer}>
       <div className={styles.posLeft}>
-        <Header onVerHistorial={() => setHistorialAbierto(true)} />
+        <Header
+          onVerHistorial={() => setHistorialAbierto(true)}
+          onAbrirF2={() => setMenuF2Abierto(true)}
+        />
+        <BuscadorCodigo />
         <Buscador
           busqueda={busqueda}
           setBusqueda={setBusqueda}
@@ -72,10 +90,17 @@ function POS() {
         )}
       </div>
 
-      <Carrito onVentaCompletada={() => setReload((r) => r + 1)} />
+      <Carrito onVentaCompletada={recargar} />
 
       {historialAbierto && (
         <HistorialVentas onCerrar={() => setHistorialAbierto(false)} />
+      )}
+
+      {menuF2Abierto && (
+        <MenuF2
+          onCerrar={() => setMenuF2Abierto(false)}
+          onRecargar={recargar}
+        />
       )}
     </div>
   );

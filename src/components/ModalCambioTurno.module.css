@@ -1,0 +1,95 @@
+.cajeroWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cajeroCard {
+  flex: 1;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cajeroLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.cajeroNombre {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+.arrow {
+  font-size: 20px;
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.select {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.passSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.passLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+.passWrap {
+  position: relative;
+}
+.passInput {
+  width: 100%;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 40px 10px 14px;
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s;
+  font-family: inherit;
+}
+.passInput:focus { border-color: var(--accent); }
+.eyeBtn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: .6;
+  padding: 0;
+}
+.eyeBtn:hover { opacity: 1; }
+
+.error {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--red);
+  font-weight: 600;
+  text-align: center;
+}

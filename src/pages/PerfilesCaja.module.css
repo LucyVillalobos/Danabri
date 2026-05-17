@@ -1,0 +1,38 @@
+.page{display:flex;flex-direction:column;height:calc(100vh - 50px);background:#f5f6fa}
+.topBar{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:#fff;border-bottom:1px solid #e5e7eb;flex-shrink:0}
+.topLeft{display:flex;align-items:center;gap:10px}
+.titulo{font-size:18px;font-weight:800;color:#1e3a5f}
+.count{font-size:12px;color:#6b7280;background:#f3f4f6;padding:3px 10px;border-radius:20px}
+.btnPrimario{padding:9px 18px;background:#e8734a;border:none;border-radius:10px;color:#fff;font-size:13px;font-weight:700;cursor:pointer}
+.btnPrimario:hover:not(:disabled){background:#d4623b}
+.btnPrimario:disabled{opacity:.4;cursor:not-allowed}
+.btnSecundario{padding:9px 18px;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:10px;color:#374151;font-size:13px;font-weight:600;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;padding:24px}
+.empty{color:#9ca3af;padding:48px;text-align:center}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:box-shadow .15s}
+.card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.cardInactiva{opacity:.5}
+.cardNum{font-size:28px;font-weight:900;color:#e8734a;font-family:monospace}
+.cardNombre{font-size:15px;font-weight:800;color:#1e3a5f}
+.cardUbic{font-size:12px;color:#6b7280}
+.cardBadges{display:flex;gap:6px;flex-wrap:wrap}
+.badgeActivo{background:#f0fdf4;color:#16a34a;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px}
+.badgeInactiva{background:#f3f4f6;color:#9ca3af;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px}
+.badgeSup{background:#faf5ff;color:#7c3aed;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px}
+.cardAcciones{display:flex;gap:6px;margin-top:4px}
+.btnAcc{flex:1;padding:7px;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#374151;cursor:pointer;transition:all .15s}
+.btnAcc:hover{border-color:#e8734a;color:#e8734a}
+.btnAccDanger{padding:7px 10px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;font-size:12px;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(30,58,95,.45);backdrop-filter:blur(2px);z-index:400;display:flex;align-items:center;justify-content:center;padding:16px}
+.modal{background:#fff;border-radius:16px;width:100%;max-width:420px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+.modalHeader{display:flex;align-items:center;justify-content:space-between}
+.modalTitulo{font-size:17px;font-weight:800;color:#1e3a5f}
+.cerrarBtn{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;color:#6b7280;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.cerrarBtn:hover{border-color:#dc2626;color:#dc2626}
+.campos{display:flex;flex-direction:column;gap:10px}
+.campo{display:flex;flex-direction:column;gap:4px}
+.campo label{font-size:11px;font-weight:600;color:#6b7280}
+.campo input{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:8px 12px;font-size:13px;outline:none}
+.campo input:focus{border-color:#e8734a}
+.checkRow{display:flex;align-items:center;gap:8px;font-size:13px;color:#374151}
+.modalFooter{display:flex;justify-content:flex-end;gap:8px;padding-top:8px;border-top:1px solid #e5e7eb}

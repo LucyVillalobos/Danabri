@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  background: #1e3a5f;
+  min-height: 50px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.menu { display: flex; gap: 2px; }
+.item {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 16px;
+  background: none; border: none;
+  border-radius: 8px;
+  color: rgba(255,255,255,0.65);
+  font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all .15s;
+  white-space: nowrap;
+}
+.item:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.itemActivo { background: rgba(255,255,255,0.18) !important; color: #fff !important; }
+.emoji { font-size: 15px; }

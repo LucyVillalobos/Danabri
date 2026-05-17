@@ -218,3 +218,279 @@
   cursor: pointer;
 }
 .cerrarBtn:hover { border-color: var(--red); color: var(--red); }
+/* ── Selector vendedor ─────────────────────────────────────── */
+.selectorWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.selectorLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.selector {
+  flex: 1;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 12px;
+  color: var(--text);
+  outline: none;
+  cursor: pointer;
+}
+.selector:focus { border-color: var(--accent); }
+
+/* ── Badge cliente seleccionado ────────────────────────────── */
+.clienteBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--accent-light);
+  border-bottom: 1px solid var(--accent);
+  flex-shrink: 0;
+}
+.clienteBadgeAvatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.clienteBadgeInfo { flex: 1; display: flex; flex-direction: column; }
+.clienteBadgeNombre { font-size: 12px; font-weight: 700; color: var(--text); }
+.clienteBadgeTipo   { font-size: 10px; color: var(--accent); font-family: var(--font-mono); text-transform: capitalize; }
+.clienteBadgeQuitar {
+  background: none; border: none; color: var(--accent);
+  font-size: 12px; cursor: pointer; padding: 2px 4px;
+  border-radius: 4px; transition: background 0.15s;
+}
+.clienteBadgeQuitar:hover { background: rgba(232,115,74,0.15); }
+
+/* ── Tag mayoreo en precio ─────────────────────────────────── */
+.tagMayoreo {
+  display: inline-block;
+  background: #f0fdf4;
+  color: #16a34a;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+  text-transform: uppercase;
+}
+
+/* ── Fila ahorro ───────────────────────────────────────────── */
+.rowAhorro { color: #16a34a !important; font-weight: 600 !important; }
+.rowAhorro span:last-child { color: #16a34a !important; }
+
+/* ── Botones secundarios (cotización / remisión) ───────────── */
+.botonesSecundarios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.btnSecundario {
+  padding: 8px 4px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.15s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btnSecundario:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.btnSecundario:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* ── Barra superusuario ──────────────────────────────────────── */
+.superBar {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.superBtn {
+  width: 100%;
+  padding: 6px;
+  background: none;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.superBtn:hover { border-color: var(--accent); color: var(--accent); }
+
+.superActivo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.superSalir {
+  background: none;
+  border: none;
+  font-size: 11px;
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ── Ítem con descuento ──────────────────────────────────────── */
+.itemWrap { margin-bottom: 8px; }
+.itemConDesc { border-color: var(--accent) !important; background: var(--accent-light) !important; }
+
+/* ── Botón % descuento en ítem ───────────────────────────────── */
+.descBtn {
+  width: 22px; height: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.descBtn:hover    { border-color: var(--accent); color: var(--accent); }
+.descBtnActivo    { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* ── Tags ────────────────────────────────────────────────────── */
+.tagDesc {
+  display: inline-block;
+  background: #fff7ed;
+  color: #ea580c;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+  text-transform: uppercase;
+}
+.tagManual {
+  display: inline-block;
+  background: #faf5ff;
+  color: #7c3aed;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+  text-transform: uppercase;
+}
+
+/* ── Panel de descuento / precio manual ──────────────────────── */
+.panelDesc {
+  background: var(--surface2);
+  border: 1px solid var(--accent);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: slideDown 0.18s ease;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.panelDescTabs { display: flex; gap: 6px; }
+.panelTab {
+  flex: 1;
+  padding: 5px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.13s;
+}
+.panelTab:hover      { border-color: var(--accent); color: var(--accent); }
+.panelTabActivo      { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+
+.panelDescRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 10px;
+}
+.panelInput {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  width: 0;
+}
+.panelUnit    { font-size: 13px; font-weight: 700; color: var(--muted); }
+.panelPreview { font-size: 12px; color: #16a34a; font-weight: 700; font-family: var(--font-mono); }
+
+.panelDescBtns { display: flex; gap: 6px; }
+.panelBtnOk {
+  flex: 1;
+  padding: 7px;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.13s;
+}
+.panelBtnOk:hover { background: var(--accent-hover); }
+.panelBtnQuitar {
+  padding: 7px 10px;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.panelBtnCancelar {
+  padding: 7px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+}

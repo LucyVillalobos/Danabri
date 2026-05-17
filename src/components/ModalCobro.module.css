@@ -130,11 +130,68 @@
 .metodoBtn:hover { border-color: var(--accent); color: var(--accent); }
 .metodoBtnActivo { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
 
+/* Pagos múltiples */
+.pagoRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.metodosMini {
+  display: flex;
+  gap: 6px;
+}
+
+.metodoBtnMini {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  transition: all 0.15s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.metodoBtnMini:hover { border-color: var(--accent); color: var(--accent); }
+.metodoBtnMini.metodoBtnActivo { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+
+.eliminarPagoBtn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.eliminarPagoBtn:hover { color: var(--red); }
+
+.agregarPagoBtn {
+  background: none;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  transition: all 0.15s;
+  cursor: pointer;
+  width: 100%;
+}
+.agregarPagoBtn:hover { border-color: var(--accent); color: var(--accent); }
+
 /* Efectivo */
 .inputWrap {
   display: flex;
   align-items: center;
-  background: var(--surface2);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
@@ -221,7 +278,7 @@
 .ticketRowTotal { font-size: 14px; font-weight: 700; color: var(--text); }
 .ticketRowTotal span:last-child { color: var(--accent); }
 
-.ticketBtns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ticketBtns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
 
 .imprimirBtn {
   padding: 12px;
@@ -235,3 +292,17 @@
   cursor: pointer;
 }
 .imprimirBtn:hover { border-color: var(--accent); color: var(--accent); }
+/* ── Ahorro en resumen ─────────────────────────────────────── */
+.resumenAhorro { color: #16a34a !important; font-weight: 600; }
+.resumenAhorro span:last-child { color: #16a34a !important; }
+
+/* ── Ticket: ahorro, facturación ───────────────────────────── */
+.ticketAhorro { color: #16a34a !important; font-weight: 600; }
+.ticketFacturacion {
+  font-size: 10px;
+  text-align: center;
+  color: var(--muted);
+  word-break: break-all;
+  margin-top: 2px;
+}
+.ticketFacturacion strong { color: var(--accent); }

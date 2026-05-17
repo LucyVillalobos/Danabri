@@ -1,0 +1,103 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45,55,72,0.6);
+  backdrop-filter: blur(3px);
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 28px 24px 20px;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%      { transform: translateX(-8px); }
+  40%      { transform: translateX(8px); }
+  60%      { transform: translateX(-6px); }
+  80%      { transform: translateX(6px); }
+}
+.shake { animation: shake 0.45s ease; }
+
+.titulo { font-size: 17px; font-weight: 700; color: var(--text); }
+.sub    { font-size: 11px; color: var(--muted); text-align: center; line-height: 1.5; }
+
+.puntos {
+  display: flex;
+  gap: 10px;
+  margin: 4px 0;
+}
+.punto {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: transparent;
+  transition: all 0.15s;
+}
+.puntoActivo {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.errorMsg {
+  font-size: 12px;
+  color: var(--red);
+  font-weight: 600;
+  animation: shake 0.3s ease;
+}
+
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.tecla {
+  padding: 14px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.tecla:hover  { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+.tecla:active { transform: scale(0.93); }
+
+.teclaOk {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.teclaOk:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; }
+
+.teclaBorrar { color: var(--muted); }
+
+.cancelar {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px 12px;
+  border-radius: 8px;
+  transition: color 0.15s;
+}
+.cancelar:hover { color: var(--red); }
